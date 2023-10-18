@@ -4,6 +4,14 @@ console.log(Charater);
 console.log("ork fine");
 
 // Since JavaScript supports classes and object-oriented programming, so does TypeScript. You can use an interface declaration with classes:
+
+
+// primitive types include
+// boolen , bigint , null , number, string , undefined , symbol
+
+// but ts extends with any, unknown 
+// void - function that return undefined or no return 
+
 interface User {
   age: string;
   name: string;
@@ -33,6 +41,10 @@ function getUser(): User {
   const myUser: User = new UserAccount("Abdalah Seleman", "2");
   return myUser;
 }
+
+
+
+
 
 
 console.log(getUser());
