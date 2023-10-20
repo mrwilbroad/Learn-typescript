@@ -4,14 +4,14 @@
  */
 
 // 01 type guard
-function padLeft(padding: number | string, input: string) {
-  if (typeof padding === "number") {
-    return "".repeat(padding) + input;
-  }
-  return padding + input;
-}
+// function padLeft(padding: number | string, input: string) {
+//   if (typeof padding === "number") {
+//     return "".repeat(padding) + input;
+//   }
+//   return padding + input;
+// }
 
-console.log(padLeft(1234, "inputzero"));
+// console.log(padLeft(1234, "inputzero"));
 
 // ----truthiness narrorwing
 // Equal narrowing
@@ -34,3 +34,18 @@ function move(animal: Fish | Bird) {
 function Human(animal: Fish | Bird): animal is Fish {
   return (animal as Fish).swim() === undefined;
 }
+
+// Equality Narrowing
+function example(x: string | number, y: string | boolean) {
+
+  // their types also must be equal
+  if (x === y) {
+    console.log(x.toUpperCase(), y.toUpperCase());
+  } else {
+    console.log("do not matching ...");
+  }
+}
+
+
+console.log(example("test test","test test"));
+console.log(example(34,"TEst failed"));
