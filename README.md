@@ -32,3 +32,11 @@ function padLeft(padding: number | string, input: string): string {
 }
 ```
 
+
+# SERIES-07
+**01 More Function**
+Functions are the basic building block of any application, whether they’re local functions, imported from another module, or methods on a class. They’re also values, and just like other values, TypeScript has many ways to describe how functions can be called. Let’s learn about how to write types that describe functions.
+
+- Function Type Expressions
+      - The simplest way to describe a function is with a function type expression. These types are syntactically similar to arrow functions:
+
