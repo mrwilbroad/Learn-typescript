@@ -25,6 +25,7 @@ By default, values like null and undefined are assignable to any other type. Thi
 
 # SERIES-06
 **01-narrowing**
+In TypeScript, narrowing refers to the process of refining or making types more specific based on certain conditions or checks. It allows you to restrict the type of a variable or value within a certain code block or scope, providing better type safety and enabling more accurate code analysis by the TypeScript compiler.
 ```js
 function padLeft(padding: number | string, input: string): string {
   throw new Error("Not implemented yet!");
