@@ -37,3 +37,35 @@ console.log(answer);
 
 const answ = Summation([1, 2, 4, 6, 7, 8, 96]);
 console.log(answ);
+
+// generic
+// Array without generic could contain anything
+type StringArray = Array<String>;
+type NumberArray = Array<number>;
+type Student = Array<{
+  name: string;
+  id: string;
+  location: String;
+}>;
+
+const me: Student = [
+  {
+    name: "mrwilbroad",
+    id: "1",
+    location: "Dodoma",
+  },
+  {
+    name: "Charles",
+    id: "2",
+    location: "Kigoma",
+  },
+];
+
+// Declare own generics
+interface Calculator<Type> {
+  addition: (obj: Type) => number;
+  setNumber: (obj: Type) => void;
+}
+
+// not worry about where it come from
+declare const Animitor: Calculator<number | number[]>;

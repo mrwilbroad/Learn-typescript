@@ -27,3 +27,12 @@ var answer = Summation(78);
 console.log(answer);
 var answ = Summation([1, 2, 4, 6, 7,10, 8, 9,346]);
 console.log(answ);
+
+
+
+
+
+
+
+
+
