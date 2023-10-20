@@ -43,3 +43,8 @@ function ClassAttendance(name: string, pos?: "First" | "Last") {
 
 ClassAttendance("WILBROAD", "First");
 ClassAttendance("WILBROAD 2nd");
+
+
+// Less Commot Primitives
+// const oneHundred : bigint = BigInt(100);
+// console.log(oneHundred);

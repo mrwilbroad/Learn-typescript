@@ -28,7 +28,13 @@ printtext("KAKA ANAUMWA", "Left");
 function ClassAttendance(name, pos) {
     // to fix Error of options
     //  !  to fix undefined Error
+    // Must be filled
+    console.log("Name : ".concat(name, " ").concat(pos.toUpperCase()));
+    // can be option
     console.log("Name : ".concat(name, " ").concat(pos === null || pos === void 0 ? void 0 : pos.toUpperCase()));
 }
 ClassAttendance("WILBROAD", "First");
 ClassAttendance("WILBROAD 2nd");
+// Less Commot Primitives
+var oneHundred = BigInt(100);
+console.log(oneHundred);
