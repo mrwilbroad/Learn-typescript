@@ -21,3 +21,13 @@ However, using any often defeats the purpose of using TypeScript in the first pl
 
 **strictNullChecks**
 By default, values like null and undefined are assignable to any other type. This can make writing some code easier, but forgetting to handle null and undefined is the cause of countless bugs in the world - some consider it a billion dollar mistake! The strictNullChecks flag makes handling null and undefined more explicit, and spares us from worrying about whether we forgot to handle null and undefined.
+
+
+# SERIES-06
+**01-narrowing**
+```js
+function padLeft(padding: number | string, input: string): string {
+  throw new Error("Not implemented yet!");
+}
+```
+
