@@ -39,4 +39,17 @@ Functions are the basic building block of any application, whether they’re loc
 
 - Function Type Expressions
       - The simplest way to describe a function is with a function type expression. These types are syntactically similar to arrow functions:
+  
+  ```js
+  function greeter(fn: (a: string) => void) 
+  {
+    fn("Hello, World");
+  }
+  
+  function printToConsole(s: string)
+  {
+  console.log(s);
+  }
+  greeter(printToConsole);
+  ```
 
