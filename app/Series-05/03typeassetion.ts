@@ -1,6 +1,8 @@
 /**
  * Type Assertion
- * |Sometimes you will have information about the type of a value that TypeScript can’t know about.
+ * |Sometimes you will have information about 
+ * the type of a value that TypeScript 
+ * can’t know about.
  */
 
 // This is type assertion to specify type
