@@ -152,3 +152,4 @@ function DoWS<Type>(obj: readonly Type[]) {
   //    obj.push("test ") // not allowed for readonly Type
   console.log(obj.length);
 }
+
