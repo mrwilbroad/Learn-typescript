@@ -80,3 +80,60 @@ function doSomething(obj: SomeType) {
 interface StringAray {
   [index: number]: string;
 }
+
+// let take Example
+interface Transaction {
+  Pizza: number;
+  Books: number;
+}
+
+const todayTrans: Transaction = {
+  Pizza: 34,
+  Books: 12,
+};
+
+// but above Interface and all can be done only if property of object of transaction are known
+
+// See problem
+let piza: string = "Pizza";
+console.log("Piza :", todayTrans[piza]);
+
+
+const todayNet = (transactions: Transaction): number => {
+  let total: number = 0;
+  for (const transaction in transactions) {
+    total += transactions[transaction];
+  }
+  return total;
+};
+console.log("Total Transaction is :", todayNet(todayTrans));
+
+// to make things Dynamic
+interface Transaction2 {
+  // all of the parameter are string and have Type number
+  [index: string]: number;
+}
+
+
+
+// then we can have multiple number of property of Type Trasactio2
+let todayTrans02: Transaction2 = {
+  pie: 89,
+  pine: 45,
+  uh: 100,
+  jul: 568
+}
+
+
+
+const todayNet02 = (transactions: Transaction2): number => {
+  let total: number = 0;
+  for (const transaction in transactions) {
+    total += transactions[transaction];
+  }
+  return total;
+};
+
+console.log("Result after indexing : ", todayNet02(todayTrans02))
+
+
