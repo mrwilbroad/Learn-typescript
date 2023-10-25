@@ -48,6 +48,29 @@ const myarray = [
 type personA = typeof myarray;
 //  { name: string , isLoggedIN : boolean, age: number}[]
 
+type personAT = typeof myarray[number];
+// /it take only single object
+// { name: string , isLoggedIN : boolean, age: number}
+// example 
+function testPersonAT(obj: personAT)
+{
+  console.log('object :',obj);
+}
+testPersonAT({ name : "brother tembo", isLoggediN: false, age: 89});
+
+// this will bring error 
+// testPersonAT([{ name : "brother tembo", isLoggediN: false, age: 89}]);
+
+// this won't bring error
+function testPersonA(obj: personA)
+{
+  console.log('object ARRAY :',obj);
+}
+
+testPersonA([{ name : "brother tembo", isLoggediN: false, age: 89}]);
+
+
+
 type PersonB = (typeof myarray)[number];
 // Now  => { name: string , isLoggedIN : boolean, age: number}
 
@@ -121,9 +144,9 @@ function createLabelAgain<T extends number | string>(idorname: T): NameorId<T> {
   throw "unemplemented";
 }
 
-let a = createLabelAgain(90);
+// let a = createLabelAgain(90);
 // a = idLabel
-let b = createLabelAgain("AMINA");
+// let b = createLabelAgain("AMINA");
 // b = NameLabel
 
 /**
@@ -144,6 +167,14 @@ interface Email {
 }
 
 type EmailMessageContent = MessageType<Email>;
+// type EmailMessageContent= string
+
+function Sending(msg:Email): string{
+     return `Message sent is :${msg.message}`;
+}
+var ms = Sending({ message : "Check if wilbroad is coding ....."});
+console.log(ms);
+
 
 
 /**
@@ -152,3 +183,40 @@ type EmailMessageContent = MessageType<Email>;
  * and introducing a conditional type:
  */
 type MessageOf<T> = T extends {message : unknown} ? T['message']: never;
+
+function Sending02(msg:MessageOf<string>)
+{
+  
+}
+
+
+// additional Example from Tutorial
+
+type Sometype = string;
+type  myconditionaltye =  Sometype extends string ? string: null;
+
+// here use generic
+function SomeFn<T>(val : T)
+{
+  const someOtherFunc =(someHow: T extends boolean ? "TYPE A": "TYPE B") =>{};
+  return someOtherFunc;
+}
+
+// result type B
+const result = SomeFn("");
+
+// result type A
+const result2 = SomeFn(true);
+
+// under concept of distibutive
+
+// type Exclude<T, U> = T extends U ? never : T; -----Built in
+type ResultType = Exclude<"a"| "b"| "c","a"|"b">
+// meaning , exclude a,b from list of type a,b,c
+// therefore ResultType become == "c"
+
+
+
+// also distributive
+type MyType<Type> = Type extends string | number ? Type: never;
+type myResult = MyType<boolean | string | number>
