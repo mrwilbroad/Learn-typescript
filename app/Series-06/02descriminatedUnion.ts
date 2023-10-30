@@ -63,6 +63,7 @@ function AreaofShape(shape: ShapeType) {
       break;
     case "square":
       answer = SquareArea(shape.slidelength);
+      break;
     default:
   }
 

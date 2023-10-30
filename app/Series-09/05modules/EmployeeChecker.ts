@@ -34,3 +34,13 @@ export type StudentNewType = MappedStudent<Student>;
     TypeScript has ES Module syntax which directly correlates to a CommonJS and AMD require. Imports using ES Module are for most cases the same as the require from those environments,
     But this syntax ensures you have a 1 to 1 match in your TypeScript file with the CommonJS output:
  */
+
+
+export type Cat = { kind: 'Cat',breed: string , yob: number};
+
+export interface Dog {
+  kind: "Dog",
+  breeds: string[],
+  yob: number
+}
+
