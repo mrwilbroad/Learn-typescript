@@ -44,3 +44,10 @@ export interface Dog {
   yob: number
 }
 
+
+export interface Chicken {
+  kind: "Chicken",
+  breeds: string[],
+  yob: number
+}
+
