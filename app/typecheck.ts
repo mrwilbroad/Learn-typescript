@@ -38,8 +38,7 @@ function AddUser(newUser: User) {
 }
 
 function getUser(): User {
-  const myUser: User = new UserAccount("Abdalah Seleman", "2");
-  return myUser;
+  return new UserAccount("Abdalah Seleman", "2");
 }
 
 

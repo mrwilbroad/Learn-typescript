@@ -1,3 +1,4 @@
+"use strict";
 // NARROWING
 /**
  * In TypeScript, narrowing refers to the process of refining or making types more specific based on certain conditions or checks. It allows you to restrict the type of a variable or value within a certain code block or scope, providing better type safety and enabling more accurate code analysis by the TypeScript compiler.
@@ -15,6 +16,7 @@ function Human(animal) {
 }
 // Equality Narrowing
 function example(x, y) {
+    // their types also must be equal
     if (x === y) {
         console.log(x.toUpperCase(), y.toUpperCase());
     }

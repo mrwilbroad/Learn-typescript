@@ -32,11 +32,13 @@ function Summation(obj: number | number[]): string {
   return `Sum : ${sum}`;
 }
 
+
 const answer = Summation(78);
 console.log(answer);
 
 const answ = Summation([1, 2, 4, 6, 7, 8, 96]);
 console.log(answ);
+
 
 // generic
 // Array without generic could contain anything

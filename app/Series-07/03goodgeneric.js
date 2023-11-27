@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Guidelines for Writing Good Generic Functions
     Writing generic functions is fun, and it can be easy to get carried away with type parameters. Having too many type parameters or using constraints where they aren’t needed can make inference less successful, frustrating callers of your function.
@@ -11,8 +12,8 @@ function FirstElement01(arr) {
 function FirstElement02(arr) {
     return arr[0];
 }
-var a = FirstElement01([1, 2, 3, 4, 5]);
-var b = FirstElement02([9, 3, 4, 5]);
+let a = FirstElement01([1, 2, 3, 4, 5]);
+let b = FirstElement02([9, 3, 4, 5]);
 console.log(a);
 console.log(b);
 // 2.
@@ -40,12 +41,22 @@ function greet(arg) {
 function Great(s) {
     return s.toUpperCase();
 }
+/**
+ * Optional Parameters in Callbacks
+ * @param arr
+ * @param fn
+ */
 function MoreforEach(arr, fn) {
-    for (var i = 0; i < arr.length; i++) {
+    for (let i = 0; i < arr.length; i++) {
         fn(arr[i], i);
     }
 }
-var Arr = [1, 2, 3, 4, 5, 6, 7];
-MoreforEach(Arr, function (n, index) {
-    console.log("".concat(index + 1, ": Number is :"), n * 12);
+let Arr = [1, 2, 3, 4, 5, 6, 7];
+MoreforEach(Arr, (n, index) => {
+    console.log(`${index + 1}: Number is :`, n * 12);
 });
+/**
+ * RULE
+ * Rule:
+ * When writing a function type for a callback, never write an optional parameter   unless    you intend to call the function without passing that argument
+ */

@@ -53,3 +53,4 @@ Functions are the basic building block of any application, whether they’re loc
   greeter(printToConsole);
   ```
 
+# react-typescript
