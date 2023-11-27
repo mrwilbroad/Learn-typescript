@@ -1,3 +1,4 @@
+"use strict";
 // with ts you can create complex type by combining simple ones
 // /unions
 // with union , you can have function that receive array or String
@@ -12,27 +13,30 @@ function getStudent(obj) {
 // function typeof s = "function"
 // array Array.isArray(a)
 function Summation(obj) {
-    var sum = 0;
+    let sum = 0;
     if (typeof obj === "number") {
         sum = obj;
     }
     else if (Array.isArray(obj)) {
-        for (var index = 0; index < obj.length; index++) {
+        for (let index = 0; index < obj.length; index++) {
             sum += obj[index];
         }
     }
-    return "Sum : ".concat(sum);
+    return `Sum : ${sum}`;
 }
-var answer = Summation(78);
+const answer = Summation(78);
 console.log(answer);
-var answ = Summation([1, 2, 4, 6, 7,10, 8, 9,346]);
+const answ = Summation([1, 2, 4, 6, 7, 8, 96]);
 console.log(answ);
-
-
-
-
-
-
-
-
-
+const me = [
+    {
+        name: "mrwilbroad",
+        id: "1",
+        location: "Dodoma",
+    },
+    {
+        name: "Charles",
+        id: "2",
+        location: "Kigoma",
+    },
+];

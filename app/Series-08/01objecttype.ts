@@ -96,13 +96,13 @@ const todayTrans: Transaction = {
 
 // See problem
 let piza: string = "Pizza";
-console.log("Piza :", todayTrans[piza]);
+console.log("Piza :", todayTrans[piza as keyof typeof todayTrans]) //assertion;
 
 
 const todayNet = (transactions: Transaction): number => {
   let total: number = 0;
   for (const transaction in transactions) {
-    total += transactions[transaction];
+    total += transactions[transaction as keyof typeof transactions ]; //assertion
   }
   return total;
 };

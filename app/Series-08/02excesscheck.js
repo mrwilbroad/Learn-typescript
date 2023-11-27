@@ -1,3 +1,4 @@
+"use strict";
 /**
  * @Excess Property Checks
     Where and how an object is assigned a type can make a difference in the type system. One of the key examples of this is in excess property checking, which validates the object more thoroughly when it is created and assigned to an object type during creation.
@@ -8,10 +9,10 @@ function createSquare(config) {
         area: config.width ? config.width * config.width : 20,
     };
 }
-var mysquare = createSquare({ color: "red", width: 100 });
+let mysquare = createSquare({ color: "red", width: 100 });
 console.log(mysquare);
 // by type assertion
-var ms = createSquare({ time: 90, opacity: 0.5 });
+let ms = createSquare({ time: 90, opacity: 0.5 });
 console.log(ms);
 function createSquare2(config) {
     return {
@@ -19,11 +20,11 @@ function createSquare2(config) {
         area: config.width ? config.width * config.width : 20,
     };
 }
-var sqaureopt = { colour: "blue" };
-var mysq = createSquare2(sqaureopt);
+let sqaureopt = { colour: "blue" };
+let mysq = createSquare2(sqaureopt);
 console.log(mysq);
-var sqaureopt02 = { color: "blue", width: 700, k: 344 };
-var mysq02 = createSquare2(sqaureopt02);
+let sqaureopt02 = { color: "blue", width: 700, k: 344 };
+let mysq02 = createSquare2(sqaureopt02);
 console.log(mysq02);
 function draw(circle) {
     console.log("Color was ", circle.color);
@@ -31,3 +32,23 @@ function draw(circle) {
 }
 draw({ color: "Blue", radius: 89 });
 draw({ color: "Blue", radius: 829 });
+/**
+ * The ReadonlyArray Type
+     The ReadonlyArray is a special type that describes arrays that shouldn’t be changed.
+ */
+function add(obj) {
+    console.log("length", obj.length);
+    console.log("Data :", obj);
+}
+/**
+ * Just as TypeScript provides a shorthand syntax for Array<Type> with Type[], it also
+ * provides a shorthand syntax for
+ * ReadonlyArray<Type> with readonly Type[].
+ */
+function DoWS(obj) {
+    obj.map((i) => {
+        console.log("Value : ", i);
+    });
+    //    obj.push("test ") // not allowed for readonly Type
+    console.log(obj.length);
+}

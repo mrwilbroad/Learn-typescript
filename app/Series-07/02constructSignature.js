@@ -1,15 +1,15 @@
+"use strict";
 function fn(s, actor) {
     return new actor(s);
 }
-var SomeClass = /** @class */ (function () {
-    function SomeClass(s) {
+class SomeClass {
+    constructor(s) {
         this.s = s;
     }
-    SomeClass.prototype.get = function () {
+    get() {
         return this.s.toUpperCase();
-    };
-    return SomeClass;
-}());
+    }
+}
 // console.log(fn("mrwilbroad dev"));
 /**
  *  Generic Functions
@@ -38,12 +38,16 @@ function map(arr, fn) {
 function Longest(a, b) {
     return a.length >= b.length ? a : b;
 }
-var lArr = Longest([12, 3, 4, 5, 6], [90]);
+let lArr = Longest([12, 3, 4, 5, 6], [90]);
 console.log("Longest Array :", lArr);
-var lstr = Longest("mrwilbroad", "Halid House");
+let lstr = Longest("mrwilbroad", "Halid House");
 console.log("Longest str :", lstr);
 // this will throw Error bcz number does not have .length property
 // let lnmb = Longest(99,23);
+/**
+ * Specifying Type Arguments
+    TypeScript can usually infer the intended type arguments in a generic call, but not always. For example, let’s say you wrote a function to combine two arrays:
+ */
 /**
  *
  * @param arr1
@@ -53,7 +57,7 @@ console.log("Longest str :", lstr);
 function Combine(arr1, arr2) {
     return arr1.concat(arr2);
 }
-var arr_one = [1, 2, 3, 4, 5, 6, 77];
-var arr_two = [45, 78, 9, 901345, 6];
-var arrt = Combine(arr_one, arr_two);
+let arr_one = [1, 2, 3, 4, 5, 6, 77];
+let arr_two = [45, 78, 9, 901345, 6];
+let arrt = Combine(arr_one, arr_two);
 console.log("Arr :", arrt);

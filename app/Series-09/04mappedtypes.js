@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Mapped Types
  *
@@ -7,9 +8,14 @@
  * types of properties which have not been declared ahead of time:
  *
  */
-var Configm = {
+const Configm = {
     name: "wilbroad Mark",
     isLogged: true,
-    year: "2009"
+    year: "2009",
 };
 console.log(Configm.name);
+// no ? again for this object
+/**
+ * Key Remapping via as
+    In TypeScript 4.1 and onwards, you can re-map keys in mapped types with an as clause in a mapped type:
+ */ 

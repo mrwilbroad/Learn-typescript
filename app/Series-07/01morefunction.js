@@ -1,3 +1,4 @@
+"use strict";
 /**
  * Function type Expression
  * @param str
@@ -31,7 +32,7 @@ function myFunc(somearg) {
 myFunc.description = "My function to compute Diff and return Boolean";
 PerformThis(myFunc);
 function ExportAll(params) {
-    var mob = "";
+    let mob = "";
     typeof params.mobile === ("string" || "number")
         ? "Mobile :" + params.mobile
         : "";

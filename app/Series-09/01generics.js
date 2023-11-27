@@ -1,3 +1,4 @@
+"use strict";
 /**
  *
  * A major part of software engineering is building components that not only have well-defined and consistent APIs, but are also reusable. Components that are capable of working on the data of today as well as the data of tomorrow will give you the most flexible capabilities for building up large software systems.
@@ -14,17 +15,17 @@ function identity(arg) {
 function identityGood(arg) {
     return arg;
 }
-var username = identityGood("MRWILBROAD MARK");
+let username = identityGood("MRWILBROAD MARK");
 console.log(username);
 /**
  * Also we can Call in this way
  */
-var myname = identityGood("MRWILBROAD MARK");
+let myname = identityGood("MRWILBROAD MARK");
 console.log(myname);
 function Identitylen(arg) {
     return arg.length;
 }
-var mynamelength = Identitylen("MRWILBROAD MARk");
+let mynamelength = Identitylen("MRWILBROAD MARk");
 console.log(mynamelength);
 // since number does not have property length
 // let n = Identitylen(90);  will bring Error
@@ -48,5 +49,6 @@ console.log("name prope :", ty);
 function create(c) {
     return new c();
 }
-var div = CreateGeneric();
+const div = CreateGeneric();
 console.log(div);
+const p = CreateGeneric(new HTMLParagraphElement());

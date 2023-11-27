@@ -1,3 +1,4 @@
+"use strict";
 // Assertion functions
 // Discriminated unions
 /**
@@ -11,7 +12,7 @@ function SquareArea(slidelength) {
     return slidelength * slidelength * slidelength;
 }
 function ComputeArea(data) {
-    var Area = 0;
+    let Area = 0;
     if (data.kind === "Circle") {
         Area = CircleArea(data.radius);
     }
@@ -20,9 +21,46 @@ function ComputeArea(data) {
     }
     return Area;
 }
-var data = {
+const data = {
     kind: "Circle",
     radius: 89,
 };
-var A = ComputeArea(data);
+const A = ComputeArea(data);
 console.log(A);
+// then
+function AreaofShape(shape) {
+    let answer = 0;
+    switch (shape.kind) {
+        case "circle":
+            answer = CircleArea(shape.radius);
+            break;
+        case "square":
+            answer = SquareArea(shape.slidelength);
+            break;
+        default:
+    }
+    return answer;
+}
+/**
+ * @params never Type
+ * When narrowing, you can reduce the options of a union to a point where you have removed all possibilities and have nothing left. In those cases, TypeScript will use a never type to represent a state which shouldn’t exist.
+ */
+/**
+ * Exhaustiveness checking
+ *
+ */
+function AreaofShapeExhaustive(shape) {
+    let answer = 0;
+    switch (shape.kind) {
+        case "circle":
+            answer = CircleArea(shape.radius);
+            break;
+        case "square":
+            answer = SquareArea(shape.slidelength);
+            break;
+        default:
+            const _exhaustivecheck = shape;
+            return _exhaustivecheck;
+    }
+    return answer;
+}
